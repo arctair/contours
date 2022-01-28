@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Grid2Contour
 {
-    public Graph Contours(int scenario)
+    public Graph Contours(int tl, int tr, int bl, int br)
     {
+        int scenario = tl > 0 ? 1 : 0;
+        scenario = (scenario << 1) + (tr > 0 ? 1 : 0);
+        scenario = (scenario << 1) + (bl > 0 ? 1 : 0);
+        scenario = (scenario << 1) + (br > 0 ? 1 : 0);
         switch (scenario)
         {
             case 1:
