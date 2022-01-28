@@ -4,15 +4,15 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class Grid2ContourTest
+public class Quad2ContourTest
 {
-    private Grid2Contour grid2Contour = new Grid2Contour();
+    private Quad2Contour quad2Contour = new Quad2Contour();
 
     [Test]
     public void ContainsNone()
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
-        Graph actual = grid2Contour.Contours(-1f, 0f, 0.25f, 0.49f, 0.5f);
+        Graph actual = quad2Contour.Contours(-1f, 0f, 0.25f, 0.49f, 0.5f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -20,7 +20,7 @@ public class Grid2ContourTest
     public void ContainsAll()
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
-        Graph actual = grid2Contour.Contours(0.5f, 1, 1, 1, 0.5f);
+        Graph actual = quad2Contour.Contours(0.5f, 1, 1, 1, 0.5f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -33,7 +33,7 @@ public class Grid2ContourTest
                     new Vector3(0, 0, 0.75f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(20, 0, 0, 0, 15);
+        Graph actual = quad2Contour.Contours(20, 0, 0, 0, 15);
         AssertGraphEquals (expected, actual);
     }
 
@@ -46,7 +46,7 @@ public class Grid2ContourTest
                     new Vector3(0, 0, 0.8f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(0, 20, 25, 20, 5);
+        Graph actual = quad2Contour.Contours(0, 20, 25, 20, 5);
         AssertGraphEquals (expected, actual);
     }
 
@@ -59,7 +59,7 @@ public class Grid2ContourTest
                     new Vector3(1f, 0, 0.75f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(0, 8, 0, 4, 7);
+        Graph actual = quad2Contour.Contours(0, 8, 0, 4, 7);
         AssertGraphEquals (expected, actual);
     }
 
@@ -72,7 +72,7 @@ public class Grid2ContourTest
                     new Vector3(1f, 0, 0.75f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(8, 0, 1, 4, 1);
+        Graph actual = quad2Contour.Contours(8, 0, 1, 4, 1);
         AssertGraphEquals (expected, actual);
     }
 
@@ -85,7 +85,7 @@ public class Grid2ContourTest
                     new Vector3(0.25f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(4, 4, 8, -4, 5);
+        Graph actual = quad2Contour.Contours(4, 4, 8, -4, 5);
         AssertGraphEquals (expected, actual);
     }
 
@@ -98,7 +98,7 @@ public class Grid2ContourTest
                     new Vector3(0.25f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(4, 999, 0, 12, 3);
+        Graph actual = quad2Contour.Contours(4, 999, 0, 12, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -111,7 +111,7 @@ public class Grid2ContourTest
                     new Vector3(0.8f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(4, 4, -7, 8, 5);
+        Graph actual = quad2Contour.Contours(4, 4, -7, 8, 5);
         AssertGraphEquals (expected, actual);
     }
 
@@ -124,7 +124,7 @@ public class Grid2ContourTest
                     new Vector3(0.8f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(999, 4, 15, 0, 3);
+        Graph actual = quad2Contour.Contours(999, 4, 15, 0, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -137,7 +137,7 @@ public class Grid2ContourTest
                     new Vector3(1f, 0, 0.75f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(0, 2, 4, 6, 3);
+        Graph actual = quad2Contour.Contours(0, 2, 4, 6, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -150,7 +150,7 @@ public class Grid2ContourTest
                     new Vector3(1f, 0, 0.25f)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(4, 6, 0, 2, 3);
+        Graph actual = quad2Contour.Contours(4, 6, 0, 2, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -163,7 +163,7 @@ public class Grid2ContourTest
                     new Vector3(0.75f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(4, 0, 6, 2, 3);
+        Graph actual = quad2Contour.Contours(4, 0, 6, 2, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -176,7 +176,7 @@ public class Grid2ContourTest
                     new Vector3(0.25f, 0, 0)
                 },
                 new int[] { 0, 1 });
-        Graph actual = grid2Contour.Contours(0, 4, 2, 6, 3);
+        Graph actual = quad2Contour.Contours(0, 4, 2, 6, 3);
         AssertGraphEquals (expected, actual);
     }
 
@@ -191,7 +191,7 @@ public class Grid2ContourTest
                     new Vector3(0.25f, 0, 0)
                 },
                 new int[] { 0, 2, 1, 3 });
-        Graph actual = grid2Contour.Contours(1, 0, 0, 1, 0.25f);
+        Graph actual = quad2Contour.Contours(1, 0, 0, 1, 0.25f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -206,7 +206,7 @@ public class Grid2ContourTest
                     new Vector3(0.75f, 0, 0)
                 },
                 new int[] { 0, 1, 2, 3 });
-        Graph actual = grid2Contour.Contours(1, 0, 0, 1, 0.75f);
+        Graph actual = quad2Contour.Contours(1, 0, 0, 1, 0.75f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -221,7 +221,7 @@ public class Grid2ContourTest
                     new Vector3(0.75f, 0, 0)
                 },
                 new int[] { 0, 1, 2, 3 });
-        Graph actual = grid2Contour.Contours(0, 1, 1, 0, 0.25f);
+        Graph actual = quad2Contour.Contours(0, 1, 1, 0, 0.25f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -236,7 +236,7 @@ public class Grid2ContourTest
                     new Vector3(0.25f, 0, 0)
                 },
                 new int[] { 0, 2, 1, 3 });
-        Graph actual = grid2Contour.Contours(0, 1, 1, 0, 0.75f);
+        Graph actual = quad2Contour.Contours(0, 1, 1, 0, 0.75f);
         AssertGraphEquals (expected, actual);
     }
 

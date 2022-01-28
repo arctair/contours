@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid2Contour
+public class Quad2Contour
 {
     private static int[] EDGE_01 = new int[] { 0, 1 };
 
