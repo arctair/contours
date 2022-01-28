@@ -22,46 +22,46 @@ public class Grid2Contour
             case 1:
             case 14:
                 return new Graph(new Vector3[] {
-                        new Vector3(1f, 0, (threshold - br) / (tr - br)),
-                        new Vector3((threshold - bl) / (br - bl), 0, 0)
+                        new Vector3(1f, 0, lerp(threshold , br, tr)),
+                        new Vector3(lerp(threshold , bl, br), 0, 0)
                     },
                     EDGE_01);
             case 2:
             case 13:
                 return new Graph(new Vector3[] {
-                        new Vector3(0, 0, (threshold - bl) / (tl - bl)),
-                        new Vector3((threshold - bl) / (br - bl), 0, 0)
+                        new Vector3(0, 0, lerp(threshold , bl, tl)),
+                        new Vector3(lerp(threshold , bl, br), 0, 0)
                     },
                     EDGE_01);
             case 3:
             case 12:
                 return new Graph(new Vector3[] {
-                        new Vector3(0, 0, (threshold - bl) / (tl - bl)),
-                        new Vector3(1f, 0, (threshold - br) / (tr - br))
+                        new Vector3(0, 0, lerp(threshold , bl, tl)),
+                        new Vector3(1f, 0, lerp(threshold , br, tr))
                     },
                     EDGE_01);
             case 4:
             case 11:
                 return new Graph(new Vector3[] {
-                        new Vector3((threshold - tl) / (tr - tl), 0, 1f),
-                        new Vector3(1f, 0, (threshold - br) / (tr - br))
+                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
+                        new Vector3(1f, 0, lerp(threshold , br, tr))
                     },
                     EDGE_01);
             case 5:
             case 10:
                 return new Graph(new Vector3[] {
-                        new Vector3((threshold - tl) / (tr - tl), 0, 1f),
-                        new Vector3((threshold - bl) / (br - bl), 0, 0)
+                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
+                        new Vector3(lerp(threshold , bl, br), 0, 0)
                     },
                     EDGE_01);
             case 6:
             case 9:
                 float average = (tl + tr + bl + br) / 4;
                 return new Graph(new Vector3[] {
-                        new Vector3((threshold - tl) / (tr - tl), 0, 1f),
-                        new Vector3(0, 0, (threshold - bl) / (tl - bl)),
-                        new Vector3(1f, 0, (threshold - br) / (tr - br)),
-                        new Vector3((threshold - bl) / (br - bl), 0, 0)
+                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
+                        new Vector3(0, 0, lerp(threshold , bl, tl)),
+                        new Vector3(1f, 0, lerp(threshold , br, tr)),
+                        new Vector3(lerp(threshold , bl, br), 0, 0)
                     },
                     average > threshold ^ scenario == 6
                         ? EDGES_0213
@@ -69,12 +69,16 @@ public class Grid2Contour
             case 7:
             case 8:
                 return new Graph(new Vector3[] {
-                        new Vector3((threshold - tl) / (tr - tl), 0, 1f),
-                        new Vector3(0, 0, (threshold - bl) / (tl - bl))
+                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
+                        new Vector3(0, 0, lerp(threshold , bl, tl))
                     },
                     EDGE_01);
             default:
                 return new Graph(new Vector3[0], new int[0]);
         }
+    }
+
+    private static float lerp(float value, float start, float end) {
+        return (value - start) / (end - start);
     }
 }
