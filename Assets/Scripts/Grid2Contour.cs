@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Grid2Contour
 {
-    public Graph Contours(int tl, int tr, int bl, int br)
+    public Graph
+    Contours(float tl, float tr, float bl, float br, float threshold)
     {
         int scenario = tl > 0 ? 1 : 0;
         scenario = (scenario << 1) + (tr > 0 ? 1 : 0);
@@ -40,6 +41,18 @@ public class Grid2Contour
                         new Vector3(0, 0, 1)
                     },
                     new int[] { 0, 1 });
+            case 6:
+            case 9:
+                float average = (tl + tr + bl + br) / 4;
+                return new Graph(new Vector3[] {
+                        new Vector3(1, 0, 2),
+                        new Vector3(0, 0, 1),
+                        new Vector3(2, 0, 1),
+                        new Vector3(1, 0, 0)
+                    },
+                    average > threshold ^ scenario == 6
+                        ? new int[] { 0, 2, 1, 3 }
+                        : new int[] { 0, 1, 2, 3 });
             case 3:
             case 12:
                 return new Graph(new Vector3[] {
