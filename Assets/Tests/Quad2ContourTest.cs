@@ -13,7 +13,7 @@ public class Quad2ContourTest
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
         Graph actual = quad2Contour.Contours(-1f, 0f, 0.25f, 0.49f, 0.5f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -21,7 +21,7 @@ public class Quad2ContourTest
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
         Graph actual = quad2Contour.Contours(0.5f, 1, 1, 1, 0.5f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -34,7 +34,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(20, 0, 0, 0, 15);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -47,7 +47,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(0, 20, 25, 20, 5);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -60,7 +60,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(0, 8, 0, 4, 7);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -73,7 +73,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(8, 0, 1, 4, 1);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -86,7 +86,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(4, 4, 8, -4, 5);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -99,7 +99,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(4, 999, 0, 12, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -112,7 +112,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(4, 4, -7, 8, 5);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -125,7 +125,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(999, 4, 15, 0, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -138,7 +138,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(0, 2, 4, 6, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -151,7 +151,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(4, 6, 0, 2, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -164,7 +164,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(4, 0, 6, 2, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -177,7 +177,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1 });
         Graph actual = quad2Contour.Contours(0, 4, 2, 6, 3);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -192,7 +192,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 2, 1, 3 });
         Graph actual = quad2Contour.Contours(1, 0, 0, 1, 0.25f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -207,7 +207,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1, 2, 3 });
         Graph actual = quad2Contour.Contours(1, 0, 0, 1, 0.75f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -222,7 +222,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 1, 2, 3 });
         Graph actual = quad2Contour.Contours(0, 1, 1, 0, 0.25f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
     [Test]
@@ -237,12 +237,7 @@ public class Quad2ContourTest
                 },
                 new int[] { 0, 2, 1, 3 });
         Graph actual = quad2Contour.Contours(0, 1, 1, 0, 0.75f);
-        AssertGraphEquals (expected, actual);
+        GraphAssert.AreEqual (expected, actual);
     }
 
-    private static void AssertGraphEquals(Graph expected, Graph actual)
-    {
-        CollectionAssert.AreEqual(expected.Vertices, actual.Vertices);
-        CollectionAssert.AreEqual(expected.Edges, actual.Edges);
-    }
 }
