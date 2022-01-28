@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Graph 
 {
-    public List<Vector3> Vertices;
-    public List<int> Edges;
-    public Graph(List<Vector3> vertices, List<int> edges){
+    public Vector3[] Vertices;
+    public int[] Edges;
+    public Graph(Vector3[] vertices, int[] edges){
         this.Vertices = vertices;
         this.Edges = edges;
     }
