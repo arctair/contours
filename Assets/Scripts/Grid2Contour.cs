@@ -33,6 +33,13 @@ public class Grid2Contour
                         new Vector3(1, 0, 0)
                     },
                     EDGE_01);
+            case 3:
+            case 12:
+                return new Graph(new Vector3[] {
+                        new Vector3(0, 0, 1),
+                        new Vector3(2, 0, 1)
+                    },
+                    EDGE_01);
             case 4:
             case 11:
                 return new Graph(new Vector3[] {
@@ -40,11 +47,11 @@ public class Grid2Contour
                         new Vector3(2, 0, 1)
                     },
                     EDGE_01);
-            case 7:
-            case 8:
+            case 5:
+            case 10:
                 return new Graph(new Vector3[] {
                         new Vector3(1, 0, 2),
-                        new Vector3(0, 0, 1)
+                        new Vector3(1, 0, 0)
                     },
                     EDGE_01);
             case 6:
@@ -59,18 +66,11 @@ public class Grid2Contour
                     average > threshold ^ scenario == 6
                         ? EDGES_0213
                         : EDGES_0123);
-            case 3:
-            case 12:
-                return new Graph(new Vector3[] {
-                        new Vector3(0, 0, 1),
-                        new Vector3(2, 0, 1)
-                    },
-                    EDGE_01);
-            case 5:
-            case 10:
+            case 7:
+            case 8:
                 return new Graph(new Vector3[] {
                         new Vector3(1, 0, 2),
-                        new Vector3(1, 0, 0)
+                        new Vector3(0, 0, 1)
                     },
                     EDGE_01);
             default:
