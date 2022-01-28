@@ -22,46 +22,46 @@ public class Quad2Contour
             case 1:
             case 14:
                 return new Graph(new Vector3[] {
-                        new Vector3(1f, 0, lerp(threshold , br, tr)),
-                        new Vector3(lerp(threshold , bl, br), 0, 0)
+                        new Vector3(1f, threshold, lerp(threshold , br, tr)),
+                        new Vector3(lerp(threshold , bl, br), threshold, 0)
                     },
                     EDGE_01);
             case 2:
             case 13:
                 return new Graph(new Vector3[] {
-                        new Vector3(0, 0, lerp(threshold , bl, tl)),
-                        new Vector3(lerp(threshold , bl, br), 0, 0)
+                        new Vector3(0, threshold, lerp(threshold , bl, tl)),
+                        new Vector3(lerp(threshold , bl, br), threshold, 0)
                     },
                     EDGE_01);
             case 3:
             case 12:
                 return new Graph(new Vector3[] {
-                        new Vector3(0, 0, lerp(threshold , bl, tl)),
-                        new Vector3(1f, 0, lerp(threshold , br, tr))
+                        new Vector3(0, threshold, lerp(threshold , bl, tl)),
+                        new Vector3(1f, threshold, lerp(threshold , br, tr))
                     },
                     EDGE_01);
             case 4:
             case 11:
                 return new Graph(new Vector3[] {
-                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
-                        new Vector3(1f, 0, lerp(threshold , br, tr))
+                        new Vector3(lerp(threshold , tl, tr), threshold, 1f),
+                        new Vector3(1f, threshold, lerp(threshold , br, tr))
                     },
                     EDGE_01);
             case 5:
             case 10:
                 return new Graph(new Vector3[] {
-                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
-                        new Vector3(lerp(threshold , bl, br), 0, 0)
+                        new Vector3(lerp(threshold , tl, tr), threshold, 1f),
+                        new Vector3(lerp(threshold , bl, br), threshold, 0)
                     },
                     EDGE_01);
             case 6:
             case 9:
                 float average = (tl + tr + bl + br) / 4;
                 return new Graph(new Vector3[] {
-                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
-                        new Vector3(0, 0, lerp(threshold , bl, tl)),
-                        new Vector3(1f, 0, lerp(threshold , br, tr)),
-                        new Vector3(lerp(threshold , bl, br), 0, 0)
+                        new Vector3(lerp(threshold , tl, tr), threshold, 1f),
+                        new Vector3(0, threshold, lerp(threshold , bl, tl)),
+                        new Vector3(1f, threshold, lerp(threshold , br, tr)),
+                        new Vector3(lerp(threshold , bl, br), threshold, 0)
                     },
                     average > threshold ^ scenario == 6
                         ? EDGES_0213
@@ -69,8 +69,8 @@ public class Quad2Contour
             case 7:
             case 8:
                 return new Graph(new Vector3[] {
-                        new Vector3(lerp(threshold , tl, tr), 0, 1f),
-                        new Vector3(0, 0, lerp(threshold , bl, tl))
+                        new Vector3(lerp(threshold , tl, tr), threshold, 1f),
+                        new Vector3(0, threshold, lerp(threshold , bl, tl))
                     },
                     EDGE_01);
             default:
