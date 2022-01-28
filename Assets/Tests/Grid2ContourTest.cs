@@ -12,7 +12,7 @@ public class Grid2ContourTest
     public void ContainsNone()
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
-        Graph actual = grid2Contour.Contours(0, 0, 0, 0, 0.5f);
+        Graph actual = grid2Contour.Contours(-1f, 0f, 0.25f, 0.49f, 0.5f);
         AssertGraphEquals (expected, actual);
     }
 
@@ -20,7 +20,7 @@ public class Grid2ContourTest
     public void ContainsAll()
     {
         Graph expected = new Graph(new Vector3[0], new int[0]);
-        Graph actual = grid2Contour.Contours(1, 1, 1, 1, 0.5f);
+        Graph actual = grid2Contour.Contours(0.5f, 1, 1, 1, 0.5f);
         AssertGraphEquals (expected, actual);
     }
 

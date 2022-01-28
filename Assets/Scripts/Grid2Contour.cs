@@ -7,10 +7,10 @@ public class Grid2Contour
     public Graph
     Contours(float tl, float tr, float bl, float br, float threshold)
     {
-        int scenario = tl > 0 ? 1 : 0;
-        scenario = (scenario << 1) + (tr > 0 ? 1 : 0);
-        scenario = (scenario << 1) + (bl > 0 ? 1 : 0);
-        scenario = (scenario << 1) + (br > 0 ? 1 : 0);
+        int scenario = tl >= threshold ? 1 : 0;
+        scenario = (scenario << 1) + (tr >= threshold ? 1 : 0);
+        scenario = (scenario << 1) + (bl >= threshold ? 1 : 0);
+        scenario = (scenario << 1) + (br >= threshold ? 1 : 0);
         switch (scenario)
         {
             case 1:
