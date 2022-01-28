@@ -29,8 +29,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 0, 0, 0, 0.5f);
@@ -42,8 +42,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 1, 1, 1, 0.5f);
@@ -55,8 +55,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(2, 0, 1)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(1f, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 1, 0, 0, 0.5f);
@@ -68,8 +68,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(2, 0, 1)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(1f, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 0, 1, 1, 0.5f);
@@ -81,8 +81,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(0, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 0, 1, 0, 0.5f);
@@ -94,8 +94,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(0, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 1, 0, 1, 0.5f);
@@ -107,8 +107,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 0, 0, 1, 0.5f);
@@ -120,8 +120,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 1, 1, 0, 0.5f);
@@ -133,8 +133,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1)
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 0, 1, 1, 0.5f);
@@ -146,8 +146,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1)
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 1, 0, 0, 0.5f);
@@ -159,8 +159,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(1, 0, 1, 0, 0.5f);
@@ -172,8 +172,8 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1 });
         Graph actual = grid2Contour.Contours(0, 1, 0, 1, 0.5f);
@@ -185,10 +185,10 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 2, 1, 3 });
         Graph actual = grid2Contour.Contours(1, 0, 0, 1, 0.25f);
@@ -200,10 +200,10 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1, 2, 3 });
         Graph actual = grid2Contour.Contours(1, 0, 0, 1, 0.75f);
@@ -215,10 +215,10 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 1, 2, 3 });
         Graph actual = grid2Contour.Contours(0, 1, 1, 0, 0.25f);
@@ -230,10 +230,10 @@ public class Grid2ContourTest
     {
         Graph expected =
             new Graph(new Vector3[] {
-                    new Vector3(1, 0, 2),
-                    new Vector3(0, 0, 1),
-                    new Vector3(2, 0, 1),
-                    new Vector3(1, 0, 0)
+                    new Vector3(0.5f, 0, 1f),
+                    new Vector3(0, 0, 0.5f),
+                    new Vector3(1f, 0, 0.5f),
+                    new Vector3(0.5f, 0, 0)
                 },
                 new int[] { 0, 2, 1, 3 });
         Graph actual = grid2Contour.Contours(0, 1, 1, 0, 0.75f);
