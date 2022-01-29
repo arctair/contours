@@ -10,7 +10,7 @@ public class Grid2Contours
         this.quad2Contour = quad2Contour;
     }
 
-    public Graph Contours(float[] grid, int width, int threshold)
+    public Graph Contours(float[] grid, int width, float threshold)
     {
         List<Vector3> vertices = new List<Vector3>();
         List<int> edges = new List<int>();
