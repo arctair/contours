@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quad2Contour
+public interface IQuad2Contour {
+    public Graph Contours(float tl, float tr, float bl, float br, float threshold);
+}
+
+public class Quad2Contour : IQuad2Contour
 {
     private static int[] EDGE_01 = new int[] { 0, 1 };
 
@@ -10,8 +14,7 @@ public class Quad2Contour
 
     private static int[] EDGES_0213 = new int[] { 0, 2, 1, 3 };
 
-    public Graph
-    Contours(float tl, float tr, float bl, float br, float threshold)
+    public Graph Contours(float tl, float tr, float bl, float br, float threshold)
     {
         int scenario = tl >= threshold ? 1 : 0;
         scenario = (scenario << 1) + (tr >= threshold ? 1 : 0);
